@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react'
+import { useCart } from 'react-use-cart'
 import {
   Collapse,
   Navbar,
@@ -7,42 +8,46 @@ import {
   Nav,
   NavItem,
   NavLink,
-  } from 'reactstrap';
+  Badge,
+  Button
+} from 'reactstrap'
 
-export default class Example extends React.Component {
-  constructor(props) {
-    super(props);
+const HomeNavBar = () => {
+  const [isOpen, setIsOpen] = useState(false)
+  const { totalItems } = useCart()
 
-    this.toggle = this.toggle.bind(this);
-    this.state = {
-      isOpen: false
-    };
+  const toggle = () => {
+    setIsOpen(!isOpen)
   }
-  toggle() {
-    this.setState({
-      isOpen: !this.state.isOpen
-    });
-  }
-  render() {
-    return (
-      <div id="courses">
-        <Navbar color="light" light expand="md">
-          <NavbarBrand href="/">Dev Growth Courses</NavbarBrand>
-          <NavbarToggler onClick={this.toggle} />
-          <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-auto" navbar>
-              <NavItem>
-                <NavLink href="/about-us/">About</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="https://github.com/LadyKerr/DevGrowthCourses">GitHub</NavLink>
-              </NavItem>
-            </Nav>
-          </Collapse>
-        </Navbar>
-      </div>
-    );
-  }
+
+  return (
+    <div id='courses'>
+      <Navbar color='light' light expand='md'>
+        <NavbarBrand href='/'>Dev Growth Courses</NavbarBrand>
+        <NavbarToggler onClick={toggle} />
+        <Collapse isOpen={isOpen} navbar>
+          <Nav className='me-auto' navbar>
+            <NavItem>
+              <NavLink href='/about-us/'>About</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href='https://github.com/LadyKerr/DevGrowthCourses'>
+                GitHub
+              </NavLink>
+            </NavItem>
+          </Nav>
+          <NavLink>
+            <Button color='primary' outline>
+              Cart{' '}
+              <Badge href='#' color='secondary'>
+                {totalItems}
+              </Badge>
+            </Button>
+          </NavLink>
+        </Collapse>
+      </Navbar>
+    </div>
+  )
 }
 
-// imported from reactstrap docs
+export default HomeNavBar
