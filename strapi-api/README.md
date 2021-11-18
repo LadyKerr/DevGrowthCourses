@@ -1,5 +1,13 @@
-# Strapi application
+# Dev Growth Courses API
 
-A quick description of your strapi application
+## Getting Started Locally
 
-local dev: http://localhost:1337/courses
+1. Clone the repository to your local machine
+1. `Cd` into the [strapi-api](https://github.com/LadyKerr/DevGrowthCourses/tree/main/strapi-api)
+1. Run `npm install` to download all dependencies.
+1. Start a localhost served version with `npm run develop`.
+1. Once NPM does its thing, go to `http://localhost:1337/courses` to see a list of courses.
+
+## Swagger Docs
+
+link: `http://localhost:1337/documentation/v1.0.0#/`

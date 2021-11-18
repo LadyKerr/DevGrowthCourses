@@ -1,15 +1,20 @@
-import { Fragment } from 'react';
-import Courses from './components/Courses';
-import NavBar from './components/NavBar'
-import 'bootstrap/dist/css/bootstrap.min.css';
+import React from 'react'
+import { CartProvider } from 'react-use-cart'
+import Courses from './components/Courses'
+import HomeNavBar from './components/NavBar'
+import Cart from './components/Cart'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
-function App() {
+function App () {
   return (
-    <Fragment>
-      <NavBar/>
-      <Courses />
-    </Fragment>
-  );
+    <>
+      <CartProvider>
+        <HomeNavBar />
+        <Courses />
+        <Cart />
+      </CartProvider>
+    </>
+  )
 }
 
-export default App;
+export default App
