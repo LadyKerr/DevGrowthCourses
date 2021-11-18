@@ -1,4 +1,4 @@
-## Dev Growth Courses
+## Dev Growth Courses FrontEnd
 
 ## Getting Started Locally
 
