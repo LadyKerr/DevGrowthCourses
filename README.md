@@ -10,6 +10,10 @@ The **backend** was seamlessly built using Strapi's headless CMS. I was able to 
 
 [Check it out for yourself](https://strapi.io/).
 
+### App Demo
+
+<img src="./devgrowthcoursesdemo.gif" alt="devgrowthcoursesdemo">
+
 ## Getting Started Locally
 
 1. Clone the repository to your local machine
