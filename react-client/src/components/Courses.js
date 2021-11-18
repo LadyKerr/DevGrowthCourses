@@ -25,13 +25,7 @@ const Courses = () => {
       <section className='py-4 container'>
         <div className='row justify-content-center'>
           {courses.map(course => {
-
-            return (
-              <CoursesCard
-                key={course.id}
-                course={course}
-              />
-            )
+            return <CoursesCard key={course.id} course={course} />
           })}
         </div>
       </section>

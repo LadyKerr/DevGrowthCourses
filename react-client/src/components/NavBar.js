@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { useCart } from 'react-use-cart'
 import {
   Collapse,
   Navbar,
@@ -7,14 +6,11 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  NavLink,
-  Badge,
-  Button
+  NavLink
 } from 'reactstrap'
 
 const HomeNavBar = () => {
   const [isOpen, setIsOpen] = useState(false)
-  const { totalItems } = useCart()
 
   const toggle = () => {
     setIsOpen(!isOpen)
@@ -36,14 +32,6 @@ const HomeNavBar = () => {
               </NavLink>
             </NavItem>
           </Nav>
-          <NavLink>
-            <Button color='primary' outline>
-              Cart{' '}
-              <Badge href='#' color='secondary'>
-                {totalItems}
-              </Badge>
-            </Button>
-          </NavLink>
         </Collapse>
       </Navbar>
     </div>

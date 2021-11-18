@@ -12,8 +12,6 @@ import {
 const CoursesCard = ({ course }) => {
   const { addItem } = useCart()
 
-  // console.log(course)
-
   return (
     <div className='col-11 col-md-6 col-lg-3 mx-0 mb-4'>
       <Card id='courses' className='p-0 overflow-hidden h-100 shadow'>
